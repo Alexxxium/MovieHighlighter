@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="src">
+    <file>style/cascade.qss</file>
+    <file>style/M.png</file>
+  </qresource>
+</RCC>
