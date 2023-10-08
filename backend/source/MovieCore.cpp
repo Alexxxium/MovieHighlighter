@@ -8,6 +8,7 @@
 #include "MovieCore.h"
 #include "Controller.h"
 #include "MovieExceptions.h"
+#include "TaskQueue.h"
 #include "WaiteQueue/WaiteQueue.h"
 
 #pragma warning(disable: 26479)
@@ -259,7 +260,7 @@ namespace mv::core
 						[=, &kills]() {
 							kills.push_back(std::move(getKillSegment(segm, {s_pos, e_pos}, step)));
 							const auto &ref = kills.back();
-emit movie->sendLog("stream (" + std::to_string(thread_num + 1) + ")\tfound kill segment:\t" + core::framePosToHMS(ref.first) + " - " + core::framePosToHMS(ref.second));
+                            emit movie->sendLog("stream (" + std::to_string(thread_num + 1) + ")\tfound kill segment:\t" + core::framePosToHMS(ref.first) + " - " + core::framePosToHMS(ref.second));
 						}
 					);
 					segm = dflt_segm;
@@ -285,7 +286,7 @@ emit movie->sendLog("stream (" + std::to_string(thread_num + 1) + ")\tfound kill
 				[=, &kills]() {
 					kills.push_back(std::move(getKillSegment(segm, { s_pos, e_pos }, step)));
 					const auto &ref = kills.back();
-emit movie->sendLog("stream (" + std::to_string(thread_num + 1) + ")\tfound kill segment:\t" + core::framePosToHMS(ref.first) + " - " + core::framePosToHMS(ref.second));
+                    emit movie->sendLog("stream (" + std::to_string(thread_num + 1) + ")\tfound kill segment:\t" + core::framePosToHMS(ref.first) + " - " + core::framePosToHMS(ref.second));
 				}
 			);
 		}

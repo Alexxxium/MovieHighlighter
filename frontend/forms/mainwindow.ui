@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>762</width>
-    <height>822</height>
+    <height>824</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -59,7 +59,7 @@
                 </font>
                </property>
                <property name="toolTip">
-                <string>How many seconds write to movie befor kill</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;How many seconds write to movie befor kill&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
                 <string>time to kill (s):</string>
@@ -89,7 +89,7 @@
                 </font>
                </property>
                <property name="toolTip">
-                <string>How many seconds write to movie after kill</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;How many seconds write to movie after kill&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
                 <string>time after kill (s):</string>
@@ -116,7 +116,7 @@
                 </font>
                </property>
                <property name="toolTip">
-                <string>How many seconds count before splice moments</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Time segment between kills to splice&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
                 <string>time between kills (s): </string>
@@ -131,7 +131,7 @@
                 </font>
                </property>
                <property name="toolTip">
-                <string>How many seconds count before splice moments</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Time segment between kills to splice&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
@@ -167,7 +167,7 @@
                 </font>
                </property>
                <property name="toolTip">
-                <string>Start point (x, y) in your video (not monitor)</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Start point (x, y) in your video (not monitor)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;top left position&lt;br/&gt;in search area (px)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -250,7 +250,7 @@
                 </font>
                </property>
                <property name="toolTip">
-                <string>Rectagel where search kills flags</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Rectagel where search kills flags&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
                 <string>sizes of
@@ -305,7 +305,7 @@ search area     (px)</string>
                 </font>
                </property>
                <property name="toolTip">
-                <string>How many frames skip - increment</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;How many frames skip - increment&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
                 <string>frame step:</string>
@@ -332,7 +332,7 @@ search area     (px)</string>
                 </font>
                </property>
                <property name="toolTip">
-                <string>Threshold of match</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Threshold of match template in frame&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
                 <string>threshold:</string>
@@ -347,7 +347,7 @@ search area     (px)</string>
                 </font>
                </property>
                <property name="toolTip">
-                <string>Threshold of match</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Threshold of match template in frame&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
@@ -359,7 +359,7 @@ search area     (px)</string>
                 </font>
                </property>
                <property name="toolTip">
-                <string>You can set optimal value for your PC</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;You can set optimal value of streams for your PC&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
                 <string>threads count:               </string>
@@ -374,7 +374,7 @@ search area     (px)</string>
                 </font>
                </property>
                <property name="toolTip">
-                <string>You can set optimal value for your PC</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can set optimal value of streams for your PC&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
@@ -453,7 +453,7 @@ search area     (px)</string>
          <item row="7" column="0">
           <widget class="QCheckBox" name="checkBox">
            <property name="toolTip">
-            <string>You can look to real time proccess</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can look to real time process&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="text">
             <string>show run-time proccess</string>
@@ -775,7 +775,7 @@ search area     (px)</string>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../../Movie.qrc"/>
+  <include location="../../source.qrc"/>
  </resources>
  <connections/>
 </ui>

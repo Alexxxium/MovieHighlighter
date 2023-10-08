@@ -12,11 +12,12 @@ namespace mv
         QDialog(parent),
         ui(new Ui::AddNewGame)
     {
-        ui->setupUi(this);
-
         constexpr auto title = "New game";
+        constexpr auto style_path = ":/src/style/M.png";
+
+        ui->setupUi(this);
         setWindowTitle(title);
-        setWindowIcon(QPixmap(":/src/style/M.png"));
+        setWindowIcon(QPixmap(style_path));
     }
 
     AddNewGame::~AddNewGame()
@@ -29,7 +30,7 @@ namespace mv
 //Slots:
 
     void AddNewGame::on_ok_push_btn_clicked()
-    {
+{
         constexpr int min_len = 2;
         const auto &text = ui->line_edit->text();
         const auto &list = MainWindow::getInstanseUI()->games_list; 

@@ -48,8 +48,6 @@ namespace mv::ctrl
 
 	private:
 
-		std::mutex mutex;
-
 		static Controller *singleton;
 
 		Controller() = default;

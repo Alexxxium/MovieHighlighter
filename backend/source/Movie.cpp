@@ -16,14 +16,14 @@ namespace mv::data
 	Data::Data()
 	{
 		template_pos  = { 1600, 0  };
-		search_area = { 240, 270 };
+		search_area   = { 240, 270 };
 
-		time_to_kill = 6;
-		time_after_kill = 0;
+		time_to_kill       = 6;
+		time_after_kill    = 0;
 		time_between_kills = 5;
 
 		frame_step = 50;
-		threshold = 0.8;
+		threshold  = 0.8;
 
 		threads_count = 3;
 	}
@@ -52,7 +52,7 @@ namespace mv::data
 
         const int
             frames_count = reader.get(cv::CAP_PROP_FRAME_COUNT),
-            frame_width = reader.get(cv::CAP_PROP_FRAME_WIDTH),
+            frame_width  = reader.get(cv::CAP_PROP_FRAME_WIDTH),
             frame_height = reader.get(cv::CAP_PROP_FRAME_HEIGHT);
 
         cv::Mat templ = cv::imread(template_img_path);
@@ -156,8 +156,8 @@ namespace mv
 
 		std::vector<std::thread> threads;
 		std::vector<std::list<std::pair<int, int>>> results;
-		results.resize(threads_count);
-																						emit sendLog("Preparing streams...");
+		results.resize(threads_count);                                                  // Logs how comments
+                                                                                        emit sendLog("Preparing streams...");
 
 		for (int i = 0; i < threads_count; ++i) {
 
@@ -166,35 +166,35 @@ namespace mv
 				[=, &results]() { 
 					results[i] = std::move(core::readSourceVideo(start_pos, end_pos, i, entrance)); 
 				}
-			));																			emit sendLog("Added stream (" + std::to_string(i + 1) + ")\tvideo range: \t" 
-																							+ core::framePosToHMS(start_pos) + " - " + core::framePosToHMS(end_pos));
+			));                                                                         emit sendLog("Added stream (" + std::to_string(i + 1) + ")\tvideo range: \t" 
+																						    + core::framePosToHMS(start_pos) + " - " + core::framePosToHMS(end_pos));
 			start_pos = end_pos;
-		}																				emit sendLog("\n\n\n\t  ...please, waite___(-o_o-)___ waite, please...\n\n");
-		for (auto &th : threads) th.join();												emit sendLog("\n\t\tAll streams ended!\n");
+		}                                                                               emit sendLog("\n\n\n\t  ...please, wait___(-o_o-)___ wait, please...\n\n");
+		for (auto &th: threads) th.join();                                              emit sendLog("\n\t\tAll streams ended!\n");
 
 
 		std::list<std::pair<int, int>> mergelist;
-		for (auto &list : results) {
+		for (auto &list: results) {
 			if (!list.empty()) {
 				mergelist.splice(mergelist.end(), list);
 			}
 		}
 
-		if (mergelist.empty()) {														emit sendLog("You didn't kill anyone in this video!\nMay be your settings are wrong...");
-			++entrance;																	emit endLog();
+		if (mergelist.empty()) {                                                        emit sendLog("You didn't kill anyone in this video!\nMay be your settings are wrong...");
+			++entrance;                                                                 emit endLog();
 			return;
 		}
 
-		core::correctList(mergelist);													emit sendLog("\nCorrect kills segments:");
-																						for (const auto &i : mergelist) emit sendLog("Time range:\t\t" + core::framePosToHMS(i.first) + " - " + core::framePosToHMS(i.second));																	
-																						emit sendLog("\nFormating...");
-		core::toFileFormat(mergelist);													emit sendLog("Writing movie...");
+		core::correctList(mergelist);                                                   emit sendLog("\nCorrect kills segments:");
+                                                                                        for (const auto &i: mergelist) emit sendLog("Time range:\t\t" + core::framePosToHMS(i.first) + " - " + core::framePosToHMS(i.second));																	
+                                                                                        emit sendLog("\nFormating...");
+		core::toFileFormat(mergelist);                                                  emit sendLog("Writing movie...");
 
 		constexpr auto ffmpeg_cmd = "ffmpeg -f concat -safe 0 -i cuts.txt -c copy ";
 		std::string command = ffmpeg_cmd + ("\"" + user_data.output_video_dir + '/' 
 			+ user_data.output_video_name + user_data.output_video_format + "\"");
-		system(command.c_str());
-																						emit sendLog("Mission complite...\n");
-		++entrance;																		emit endLog();
+		int res = system(command.c_str());                                              emit sendLog(res == 0 ? "Mission complete...\n" : "Failed to record video! Input video path must not contain non-Latin letters or '\n");
+															       
+		++entrance;                                                                     emit endLog();
 	}
 }

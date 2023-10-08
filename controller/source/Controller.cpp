@@ -43,12 +43,12 @@ namespace mv::ctrl
 		return singleton;
 	}
 
+	std::mutex mutex;
 	void Controller::catchLog(const std::string &log)
 	{
-		mutex.lock();
-		std::this_thread::sleep_for(std::chrono::milliseconds(10));		// WTF
-		MainWindow::getInstanseUI()->textBrowser->append(log.c_str());
-		mutex.unlock();
+		std::lock_guard<std::mutex> lock(mutex);
+		auto ui = MainWindow::getInstanseUI();
+		ui->textBrowser->append(log.c_str());
 	}
 
 	
