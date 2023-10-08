@@ -23,14 +23,14 @@
     <article>
       <h2 id="1">Как собрать или установить</h2>
       <p>
-        CMake. Перед сборкой необходимо установить библиоткею OpenCV, если вы будете ее <a href="https://habr.com/ru/articles/722918/">собирать</a>, то нужно выбрать необходимые компоненты для многопоточного режима (недавнее обновление библиотеки). 
-        Без этого программа не будет работать в полную силу. Все же проще загрузить уже ее <a href="https://opencv.org/releases/">собранную версию</a>, чтобы не возиться с компонентами. Также вам понадибится Qt, сейчас его сложнее получить, я вообще сижу с Qt5, 
-        что черевато <a href="https://www.partitionwizard.com/clone-disk/no-qt-platform-plugin-could-be-initialized.html">этим</a>. Поэтому рекомендую в CMakeLists.txt указать свою версию. 
+        CMake. Перед сборкой необходимо установить библиоткею OpenCV, если вы будете ее <a href="https://habr.com/ru/articles/722918/">собирать</a>, то нужно выбрать необходимые компоненты для многопоточного режима (с недавнего времени). 
+        Без этого программа не будет работать в полную силу. Все же проще загрузить уже ее <a href="https://opencv.org/releases/">собранной</a>, чтобы не возиться с компонентами. Также вам понадибится Qt, желательно 6 версии т.к. на Qt5 могут начаться проблемы с 
+        <a href="https://www.partitionwizard.com/clone-disk/no-qt-platform-plugin-could-be-initialized.html">этим</a>. Поэтому рекомендую в CMakeLists.txt указать свою версию по возможности. 
         После сборки нам нужно закинуть <a href="https://ffmpeg.org/download.html">ffmpeg</a> в корневую папку с исполняемым файлом, нас интересует ffmpeg.exe и все динаические библиотеки dll, которые там будут (папка bin). 
-        Также добавте opencv_version.exe и opencv_videoio_ffmpeg480_64.dll (из библиотеки openCV). 
+        Туда же добавте opencv_version.exe и opencv_videoio_ffmpeg480_64.dll (из папки с OpenCV/bin и OpenCV/x64/vc../bin). 
       </p>
       <p>
-        Cобранное приложение под <a href="https://drive.google.com/file/d/1wOwAycdZTzH7_mpITYgHEvz0hxUif3IQ/view?usp=sharing">Windows</a>.
+        Cобранное приложение под <a href="https://drive.google.com/file/d/1wOwAycdZTzH7_mpITYgHEvz0hxUif3IQ/view?usp=sharing">Windows</a> на Qt5.
       </p>
       <br>
       <br>
